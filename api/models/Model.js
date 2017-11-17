@@ -9,27 +9,17 @@ var PersonSchema = new Schema({
   LastName: {
     type: String
   },
-  Contact: [{
-    Address: [{
-      Street: {
-        type: String
-      },
-      City: {
-        type: String
-      },
-      Zip: {
-        type: String
-      }
-    }],
-    Phone: [{
-      Home: {
-        type: String
-      },
-      Work: {
-        type: String
-      }
-    }]
-  }]
+  Contact: {
+    Address: {
+      Street: String,
+      City: String,
+      Zip: String
+    },
+    Phone: {
+      Home: String,
+      Work: String
+    }
+  }
 });
 
 module.exports = mongoose.model('People', PersonSchema);
